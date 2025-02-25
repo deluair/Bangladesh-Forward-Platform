@@ -5,29 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bangladesh Forward: A Vision for Change</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/png" href="assets/images/flag-bg.png">
     <meta name="description" content="Bangladesh Forward is a political platform addressing major challenges facing Bangladesh with innovative, people-first solutions.">
 </head>
 <body>
-    <header>
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="logo">Bangladesh Forward</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#vision">Our Vision</a></li>
+                <li><a href="#issues">Key Issues</a></li>
+                <li><a href="#contact">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
         <div class="header-content">
             <h1>Bangladesh Forward</h1>
             <p class="tagline">A New Vision for a Prosperous, Equitable, and Sustainable Bangladesh</p>
+            <a href="#issues" class="btn-primary">Explore Our Platform</a>
         </div>
     </header>
     
     <div class="container">
-        <section class="intro">
+        <section class="intro" id="vision">
             <h2>Addressing Bangladesh's Critical Challenges</h2>
             <p>Our nation faces significant challenges that require bold, innovative solutions. Bangladesh Forward is committed to addressing these issues with transparency, integrity, and a people-first approach.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>6.0%</h3>
+                    <p>Projected GDP Growth</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>169M</h3>
+                    <p>Population</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>74.7%</h3>
+                    <p>Literacy Rate</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-building"></i>
+                    <h3>38.2%</h3>
+                    <p>Urban Population</p>
+                </div>
+            </div>
         </section>
         
-        <section class="issues-grid">
+        <section class="issues-grid" id="issues">
+            <h2 class="section-title">Our Policy Platform</h2>
+            
             <!-- Economic Development -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Economic Development</h3>
+                    <h3><i class="fas fa-chart-pie"></i> Economic Development</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
@@ -44,159 +85,255 @@
             <!-- Climate Change & Environmental Protection -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Climate Resilience</h3>
+                    <h3><i class="fas fa-cloud-sun-rain"></i> Climate Resilience</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>Bangladesh is one of the most climate-vulnerable countries globally, facing rising sea levels, increased flooding, cyclones, and saltwater intrusion that threatens agriculture and livelihoods of millions.</p>
+                        <p>Bangladesh remains one of the world's most climate-vulnerable nations, facing rising sea levels, increasing cyclone intensity, and unpredictable rainfall patterns. These threats endanger lives, infrastructure, agriculture, and economic stability.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Develop a comprehensive Climate Adaptation Fund to finance climate-resilient infrastructure. Implement a nationwide mangrove restoration program to protect coastal areas. Transition to renewable energy with a target of 50% clean energy by 2040. Create climate-smart agricultural practices and provide subsidies for farmers adopting these methods.</p>
+                        <p>Develop a comprehensive climate adaptation plan including elevated infrastructure, expanded mangrove forests as natural buffers, and climate-resilient agriculture. Increase renewable energy to 40% of power generation by 2035. Implement a carbon tax on largest emitters to fund climate adaptation projects. Lead global advocacy for climate justice and finance for vulnerable nations.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Governance & Corruption -->
+
+            <!-- Governance Reform -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Governance Reform</h3>
+                    <h3><i class="fas fa-balance-scale"></i> Governance Reform</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>Systemic corruption, weak institutional capacity, and political polarization have undermined public trust in government and hindered effective service delivery to citizens.</p>
+                        <p>Corruption, bureaucratic inefficiency, and weakened democratic institutions have eroded public trust and hindered national development. Citizens face obstacles in accessing government services and having their voices heard.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Establish an independent Anti-Corruption Commission with prosecutorial powers and protection for whistleblowers. Implement e-governance systems for all public services to reduce corruption and increase transparency. Reform the civil service with merit-based recruitment and performance-based promotions. Strengthen local governance through decentralization and participatory budgeting.</p>
+                        <p>Establish an independent anti-corruption commission with prosecutorial powers. Implement e-governance systems for all public services to increase transparency and reduce corruption. Reform civil service through merit-based recruitment and promotion. Strengthen local government with devolution of power and resources. Ensure independence of judiciary and election commission.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Education System Reform -->
+
+            <!-- Education Reform -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Education Revolution</h3>
+                    <h3><i class="fas fa-graduation-cap"></i> Education Revolution</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>The education system emphasizes rote learning over critical thinking and fails to prepare students for the modern job market. Quality disparities between urban and rural areas persist, and dropout rates remain high.</p>
+                        <p>Bangladesh's education system struggles with outdated curricula, inadequate facilities, and teaching methods that emphasize memorization over critical thinking. Many students graduate without skills needed for the modern job market.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Modernize the curriculum to emphasize critical thinking, problem-solving, and digital literacy. Invest in teacher training and competitive salaries to attract top talent to the profession. Establish a network of technical and vocational schools in partnership with industry. Implement a national digital education platform to bridge the urban-rural divide.</p>
+                        <p>Revamp national curriculum to focus on critical thinking, problem-solving, and digital literacy. Invest 4% of GDP in education with emphasis on teacher training and classroom technology. Establish vocational training centers in every district with industry partnerships. Create research grants for universities and incentivize innovation. Implement universal early childhood education.</p>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Healthcare Access -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Healthcare for All</h3>
+                    <h3><i class="fas fa-heartbeat"></i> Healthcare for All</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>Healthcare remains inaccessible and unaffordable for many citizens, with inadequate facilities in rural areas. Out-of-pocket expenses push millions into poverty annually, and preventable diseases continue to burden the system.</p>
+                        <p>Healthcare services remain inaccessible to many, especially in rural areas. Out-of-pocket expenses drive families into poverty, and the system struggles with shortages of qualified healthcare workers, medication, and modern equipment.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Implement a Universal Health Coverage system with a focus on preventive care. Establish a network of well-equipped community health centers in every upazila. Launch a national health insurance scheme with subsidies for low-income families. Develop a robust telemedicine infrastructure to connect remote areas with specialized medical expertise.</p>
+                        <p>Implement a universal health coverage system with a national health insurance program. Establish fully staffed community clinics in every rural ward. Expand digital health services to connect remote areas with specialists. Create incentives for doctors to serve in rural areas. Invest in domestic pharmaceutical manufacturing to ensure affordable medication.</p>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Infrastructure Development -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Infrastructure Transformation</h3>
+                    <h3><i class="fas fa-road"></i> Infrastructure Transformation</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>Inadequate transportation, energy, and digital infrastructure hampers economic growth and quality of life. Urban areas face congestion, pollution, and housing shortages, while rural areas lack basic connectivity.</p>
+                        <p>Inadequate transportation, energy, and digital infrastructure constrains economic growth and quality of life. Traffic congestion, power shortages, and limited internet connectivity hamper productivity and investment.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Develop an integrated multi-modal transportation system connecting all districts. Implement smart city solutions for urban areas with efficient public transportation and affordable housing. Expand renewable energy capacity and modernize the national grid. Achieve 100% high-speed internet coverage nationwide through public-private partnerships.</p>
+                        <p>Develop integrated multi-modal transportation systems connecting all districts. Expand renewable energy capacity and modernize the power grid. Build climate-resilient coastal infrastructure. Ensure nationwide 5G connectivity and establish digital hubs in every division. Implement smart city technologies in urban centers to improve efficiency and reduce environmental impact.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Water Security -->
+
+            <!-- Unemployment -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Water Security</h3>
+                    <h3><i class="fas fa-briefcase"></i> Employment Generation</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>Arsenic contamination, groundwater depletion, and pollution of rivers threaten water security. Many communities lack access to clean drinking water, and transboundary water sharing remains contentious.</p>
+                        <p>Bangladesh faces rising graduate unemployment, with nearly 40% of university graduates struggling to find suitable jobs. The mismatch between education and industry needs creates frustration and economic waste.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Implement a comprehensive river restoration program to clean major waterways. Develop rainwater harvesting and water conservation technologies. Establish a national water quality monitoring system with public access to data. Strengthen diplomatic efforts for equitable water-sharing agreements with neighboring countries.</p>
+                        <p>Launch a National Employment Strategy with industry-specific growth targets. Provide tax incentives for companies hiring first-time job seekers. Establish entrepreneurship hubs in every district with microloan programs. Create digital platforms connecting job seekers with opportunities. Implement work-study programs at universities to provide real-world experience during education.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Youth Empowerment -->
+
+            <!-- Disaster Management -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Youth Empowerment</h3>
+                    <h3><i class="fas fa-house-damage"></i> Disaster Resilience</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>With over 65% of the population under 35, Bangladesh has a demographic dividend that remains largely untapped due to unemployment, skills mismatches, and limited opportunities for meaningful civic engagement.</p>
+                        <p>Bangladesh's geographic location makes it highly vulnerable to natural disasters including cyclones, floods, and riverbank erosion, causing loss of life, displacement, and economic damage annually.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Create a National Youth Innovation Fund to finance youth-led startups and social enterprises. Establish youth leadership academies in every division to nurture future leaders. Implement a mandatory youth quota in local government committees. Launch a digital platform connecting youth with mentorship, internship, and job opportunities across sectors.</p>
+                        <p>Build a comprehensive disaster management system with advanced early warning technology reaching every village. Construct disaster-resistant community shelters in all vulnerable areas. Create a dedicated Disaster Response Corps with specialized training and equipment. Implement community-based disaster preparedness programs. Establish a permanent Climate Adaptation Fund for immediate post-disaster reconstruction.</p>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Urban Management -->
+            <div class="issue-card">
+                <div class="issue-header">
+                    <h3><i class="fas fa-city"></i> Urban Transformation</h3>
+                </div>
+                <div class="issue-content">
+                    <div class="problem">
+                        <h4>The Challenge:</h4>
+                        <p>Rapid urbanization has led to unplanned growth, inadequate housing, traffic congestion, air pollution, and strained public services in Bangladesh's cities, dramatically reducing quality of life.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Our Solution:</h4>
+                        <p>Implement comprehensive urban planning with strict zoning laws and green space requirements. Develop affordable housing projects through public-private partnerships. Invest in mass transit systems including expanded metro networks and water transportation. Enact and enforce air quality standards with emissions testing. Create satellite towns to decentralize urban growth and reduce pressure on major cities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Deepening -->
+            <div class="issue-card">
+                <div class="issue-header">
+                    <h3><i class="fas fa-landmark"></i> Financial Inclusion</h3>
+                </div>
+                <div class="issue-content">
+                    <div class="problem">
+                        <h4>The Challenge:</h4>
+                        <p>Despite microfinance success, many Bangladeshis remain unbanked or underbanked. Small businesses struggle to access affordable credit, limiting growth and job creation. The financial system lacks depth and sophistication.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Our Solution:</h4>
+                        <p>Expand digital banking services to reach every citizen through mobile technology. Create a tiered regulatory framework to encourage fintech innovation while ensuring consumer protection. Establish specialized SME financing institutions with simplified loan processes. Develop the bond market to provide alternative financing sources. Implement financial literacy programs in schools and communities to increase economic empowerment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Trade -->
+            <div class="issue-card">
+                <div class="issue-header">
+                    <h3><i class="fas fa-ship"></i> Trade Expansion</h3>
+                </div>
+                <div class="issue-content">
+                    <div class="problem">
+                        <h4>The Challenge:</h4>
+                        <p>Bangladesh's exports remain concentrated in garments, creating economic vulnerability. Trade infrastructure is underdeveloped, and our products face non-tariff barriers in many markets. Post-LDC graduation will bring new challenges.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Our Solution:</h4>
+                        <p>Diversify exports through targeted incentives for high-potential sectors including pharmaceuticals, IT services, and processed foods. Modernize ports and establish efficient customs processes through digitalization. Negotiate strategic free trade agreements focusing on emerging Asian markets. Create export promotion zones with specialized facilities for new export industries. Develop a comprehensive strategy for navigating post-LDC challenges.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Gender Equality -->
             <div class="issue-card">
                 <div class="issue-header">
-                    <h3>Gender Equality</h3>
+                    <h3><i class="fas fa-venus-mars"></i> Gender Equality</h3>
                 </div>
                 <div class="issue-content">
                     <div class="problem">
                         <h4>The Challenge:</h4>
-                        <p>Despite progress in girls' education and women's workforce participation, gender-based violence, discrimination, and limited economic and political opportunities for women persist across society.</p>
+                        <p>Despite progress, women in Bangladesh continue to face gender-based violence, workplace discrimination, unequal pay, and barriers to leadership positions in both public and private sectors.</p>
                     </div>
                     <div class="solution">
                         <h4>Our Solution:</h4>
-                        <p>Strengthen legal protections against gender-based violence with specialized courts for swift justice. Implement gender-responsive budgeting across all ministries. Provide tax incentives for businesses with gender-equal hiring and promotion practices. Establish women's leadership programs and mentorship networks. Create a comprehensive childcare system to support working mothers.</p>
+                        <p>Establish specialized courts for gender-based violence cases with trained personnel. Create incentives for businesses that promote women to leadership positions. Implement universal childcare programs to support working mothers. Launch girls' education initiative with stipends and mentorship. Ensure equal inheritance rights and economic opportunities through legislative reform and enforcement.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="cta-section">
+        <section class="cta-section" id="contact">
             <h2>Join the Movement for a Better Bangladesh</h2>
             <p>Together, we can build a nation that works for everyone - where prosperity is shared, rights are protected, and opportunities are accessible to all.</p>
-            <a href="#" class="cta-button">Get Involved Today</a>
+            <a href="#" class="btn-primary">Get Involved</a>
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <h3>Stay Connected</h3>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </form>
+            </div>
         </section>
     </div>
     
     <footer>
         <div class="footer-content">
-            <p> 2025 Bangladesh Forward. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
+            <div class="footer-section">
+                <h3>Bangladesh Forward</h3>
+                <p>Working for a prosperous, equitable, and sustainable Bangladesh.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <p>Contact: info@bangladeshforward.org | +880 2 XXXX XXXX</p>
+            <div class="footer-section">
+                <h3>Key Issues</h3>
+                <ul>
+                    <li><a href="#issues">Economic Development</a></li>
+                    <li><a href="#issues">Climate Resilience</a></li>
+                    <li><a href="#issues">Governance Reform</a></li>
+                    <li><a href="#issues">Education Revolution</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+                    <p><i class="fas fa-envelope"></i> info@bangladeshforward.org</p>
+                    <p><i class="fas fa-phone"></i> +880 2 XXXX XXXX</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bangladesh Forward. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>

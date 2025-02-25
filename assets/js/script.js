@@ -1,235 +1,156 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
     
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
         });
     }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu && navMenu.classList.contains('active') && !e.target.closest('.main-nav')) {
+            navMenu.classList.remove('active');
+        }
+    });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
             
+            const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                // Close mobile menu if open
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+                
+                // Scroll to target with offset for fixed header
+                const headerOffset = 70;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
-                
-                // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
             }
         });
     });
     
-    // Testimonial slider
-    const testimonialTrack = document.querySelector('.testimonial-track');
-    const testimonials = document.querySelectorAll('.testimonial');
-    const prevButton = document.querySelector('.prev-button');
-    const nextButton = document.querySelector('.next-button');
-    
-    if (testimonialTrack && testimonials.length > 0) {
-        let currentIndex = 0;
-        const testimonialCount = testimonials.length;
-        
-        testimonialTrack.style.width = `${testimonialCount * 100}%`;
-        
-        function updateSlider() {
-            testimonialTrack.style.transform = `translateX(-${currentIndex * (100 / testimonialCount)}%)`;
-        }
-        
-        if (prevButton) {
-            prevButton.addEventListener('click', function() {
-                currentIndex = (currentIndex === 0) ? testimonialCount - 1 : currentIndex - 1;
-                updateSlider();
-            });
-        }
-        
-        if (nextButton) {
-            nextButton.addEventListener('click', function() {
-                currentIndex = (currentIndex === testimonialCount - 1) ? 0 : currentIndex + 1;
-                updateSlider();
-            });
-        }
-        
-        // Auto-advance testimonials
-        setInterval(function() {
-            currentIndex = (currentIndex === testimonialCount - 1) ? 0 : currentIndex + 1;
-            updateSlider();
-        }, 8000);
-    }
-    
-    // Modals
-    const modalTriggers = document.querySelectorAll('[data-modal]');
-    const closeModalButtons = document.querySelectorAll('.close-modal');
-    
-    modalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            const modalId = this.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            
-            if (modal) {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-    
-    closeModalButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modal = this.closest('.modal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-    });
-    
-    // Close modal when clicking outside content
-    document.querySelectorAll('.modal').forEach(modal => {
-        modal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    });
-    
-    // Escape key closes modal
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.style.display = 'none';
-            });
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Animation on scroll
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    
-    function checkInView() {
-        animatedElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementTop < windowHeight - 100) {
-                element.classList.add('animate-fade-in');
-            }
-        });
-    }
-    
-    // Run on initial load
-    checkInView();
-    
-    // Run on scroll
-    window.addEventListener('scroll', checkInView);
-    
-    // Validate form submission
-    const contactForm = document.getElementById('contact-form');
-    
+    // Form validation
+    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const messageInput = document.getElementById('message');
+            // Get form fields
+            const nameField = this.querySelector('#name');
+            const emailField = this.querySelector('#email');
+            const messageField = this.querySelector('#message');
             
+            // Basic validation
             let isValid = true;
             
-            // Simple validation
-            if (!nameInput.value.trim()) {
+            if (!nameField.value.trim()) {
+                showError(nameField, 'Name is required');
                 isValid = false;
-                showError(nameInput, 'Please enter your name');
             } else {
-                clearError(nameInput);
+                removeError(nameField);
             }
             
-            if (!emailInput.value.trim()) {
+            if (!emailField.value.trim()) {
+                showError(emailField, 'Email is required');
                 isValid = false;
-                showError(emailInput, 'Please enter your email');
-            } else if (!isValidEmail(emailInput.value)) {
+            } else if (!isValidEmail(emailField.value.trim())) {
+                showError(emailField, 'Please enter a valid email');
                 isValid = false;
-                showError(emailInput, 'Please enter a valid email address');
             } else {
-                clearError(emailInput);
+                removeError(emailField);
             }
             
-            if (!messageInput.value.trim()) {
+            if (!messageField.value.trim()) {
+                showError(messageField, 'Message is required');
                 isValid = false;
-                showError(messageInput, 'Please enter your message');
             } else {
-                clearError(messageInput);
+                removeError(messageField);
             }
             
             if (isValid) {
-                // In a real implementation, you would send the form data to a server
-                contactForm.reset();
-                
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-                
-                contactForm.appendChild(successMessage);
-                
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
+                // In a real application, you would send the form data to a server
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
             }
         });
     }
     
-    function showError(input, message) {
-        // Clear any existing error
-        clearError(input);
+    // Helper functions for form validation
+    function showError(field, message) {
+        // Remove existing error message if any
+        removeError(field);
         
-        const formGroup = input.closest('.form-group');
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'error-message';
-        errorMessage.textContent = message;
-        errorMessage.style.color = 'var(--secondary-color)';
-        errorMessage.style.fontSize = '0.8rem';
-        errorMessage.style.marginTop = '0.3rem';
+        // Create error message element
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.style.color = '#f42a41';
+        errorElement.style.fontSize = '0.8rem';
+        errorElement.style.marginTop = '5px';
+        errorElement.textContent = message;
         
-        formGroup.appendChild(errorMessage);
-        input.style.borderColor = 'var(--secondary-color)';
+        // Add red border to field
+        field.style.borderColor = '#f42a41';
+        
+        // Insert error message after the field
+        field.parentNode.insertBefore(errorElement, field.nextSibling);
     }
     
-    function clearError(input) {
-        const formGroup = input.closest('.form-group');
-        const existingError = formGroup.querySelector('.error-message');
+    function removeError(field) {
+        // Reset field border
+        field.style.borderColor = '';
         
-        if (existingError) {
-            existingError.remove();
+        // Remove error message if exists
+        const errorElement = field.parentNode.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.remove();
         }
-        
-        input.style.borderColor = '';
     }
     
     function isValidEmail(email) {
+        // Basic email validation using regex
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
     
-    // Progress bars animation
-    const progressBars = document.querySelectorAll('.progress-bar');
-    
-    progressBars.forEach(bar => {
-        const targetWidth = bar.getAttribute('data-width');
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.issue-card, .stat-card');
         
-        setTimeout(() => {
-            bar.style.width = targetWidth;
-        }, 500);
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Set initial state for animation
+    const cards = document.querySelectorAll('.issue-card, .stat-card');
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
+    
+    // Run animation on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
 });
