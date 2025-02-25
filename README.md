@@ -36,7 +36,7 @@ The platform focuses on nine critical challenges facing Bangladesh:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/bangladesh-forward-platform.git
+   git clone https://github.com/deluair/bangladesh-forward-platform.git
    ```
 
 2. Navigate to the project directory:
@@ -53,7 +53,7 @@ This site is designed to be deployed on GitHub Pages. To deploy:
 1. Push your changes to your GitHub repository
 2. Go to repository Settings > Pages
 3. Set source to your main branch
-4. Your site will be published at `https://yourusername.github.io/bangladesh-forward-platform/`
+4. Your site will be published at `https://deluair.github.io/bangladesh-forward-platform/`
 
 ## 🔧 Customization
 
