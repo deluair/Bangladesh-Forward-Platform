@@ -1,0 +1,35 @@
+theme: jekyll-theme-cayman
+title: Bangladesh Forward
+description: A New Vision for a Prosperous, Equitable, and Sustainable Bangladesh
+baseurl: ""
+url: "https://www.bangladeshforward.org"
+github_username: bangladeshforward
+repository: bangladeshforward/bangladesh-forward-platform
+
+# Google Analytics
+google_analytics: # Add your tracking ID here
+
+# Social Media
+social:
+  twitter: bangladeshforward
+  facebook: bangladeshforward
+  instagram: bangladeshforward
+  youtube: bangladeshforward
+
+# SEO settings
+lang: en_US
+author: Bangladesh Forward
+twitter:
+  username: bangladeshforward
+  card: summary_large_image
+facebook:
+  app_id: # Facebook app ID
+  publisher: # Facebook page URL
+  admins: # Facebook user ID for domain insights
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
